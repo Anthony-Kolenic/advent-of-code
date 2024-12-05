@@ -25,7 +25,6 @@ def search_grid(grid) -> int:
     return total
 
 def diagonal_search(grid, search = "XMAS") -> list[tuple[int, int]]:
-    total = 0
     search_rev = search[::-1]
     result = []
     for r in range(len(grid)):
@@ -35,7 +34,6 @@ def diagonal_search(grid, search = "XMAS") -> list[tuple[int, int]]:
                 for i in range(len(search)):
                     word += grid[r + i][c + i]
                 if word == search or word == search_rev:
-                    total += 1
                     result.append((r, c))
             except:
                 # Except when out of bounds, so we skip these
